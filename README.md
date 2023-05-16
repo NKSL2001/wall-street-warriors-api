@@ -4,13 +4,21 @@
 
 This repository hosts the files required to run the REST API for the final assignment topic 5: Wall Street Warriors for WIA1002 2022/2023 Semester 2, Universiti Malaya.
 
+> **Warning**
+>
+> DO NOT USE THIS API OUTSIDE OF YOUR FINAL PROJECT (Universiti Malaya WIA1002 2022/2023 Semester 2). WE DO NOT PROVIDE ANY GUARANTEE ON THE INFORMATION PROVIDED BY THE API, NOR WE WILL ASSUME RESPONSIBILITIES.
+
 ## API
 
-You may access this API on the endpoint `https://wall-street-warriors-api-um.vercel.app/`. API key is required for access for the API address below by appending the GET variable `apikey`. Follow the instructions provided in the project requirement PDF to get an API key for your final project.
+You may access this API on the endpoint [`https://wall-street-warriors-api-um.vercel.app/`](https://wall-street-warriors-api-um.vercel.app/). API key is required for access for the API address below by appending the GET variable `apikey`. Follow the instructions provided in the project requirement PDF to get an API key for your final project.
 
 Currently, two modules are provided:
 
 ### `price`
+> **Warning**
+> 
+> Price might be delayed during trading time due to multiple reasons. We do not guarantee the timeliness of the API, but the functionality of this API should be enough for your project.
+
 Allow checking of price for any particular stock symbol(s) in the last few days.
 
 API call: `/price?apikey=APIKEY&symbol=XXXX`, multiple symbols can be requested by using comma to join them, e.g.: `symbol=AAPL,MSFT`.
