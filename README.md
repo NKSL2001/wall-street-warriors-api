@@ -6,7 +6,7 @@ This repository hosts the files required to run the REST API for the final assig
 
 ## API
 
-You may access this API on the endpoint ``. API key is required for access for the API address below by appending the GET variable `apikey`. Follow the instructions provided in the project requirement PDF to get an API key for your final project.
+You may access this API on the endpoint `https://wall-street-warriors-api-um.vercel.app/`. API key is required for access for the API address below by appending the GET variable `apikey`. Follow the instructions provided in the project requirement PDF to get an API key for your final project.
 
 Currently, two modules are provided:
 
@@ -169,7 +169,6 @@ Requires npm and Python installation.
 
 ```bash
 npm i -g vercel
-pip install -r requirements.txt
 vercel dev
 ```
 
@@ -179,14 +178,14 @@ Your Flask application is now available at `http://localhost:3000`.
 
 You may choose to deploy this service on [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples) yourself too:
 
-[![Deploy with Vercel](https://vercel.com/button)]()
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/NFSL2001/wall-street-warriors-api)
 
 Add an environment variable to your project with the name `keys`, then use the key you have added in your code to access the API to your own end.
 
-### Report problems
+## Report problems
 
 You may report any problem related to this API in the [Issues tab]().
 
-### Dependencies
+## Dependencies
 
 This API heavily relies on [yfinance](https://github.com/ranaroussi/yfinance), a Python module, for the real time price data.
