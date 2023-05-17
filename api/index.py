@@ -48,7 +48,7 @@ def getPrice():
     days = request.args.get('days', default=5, type=int)
         
     if not symbol:
-        about(413, "No symbol provided")
+        abort(413, "No symbol provided")
         
     if days > 60:
         abort(413, "Days too large, max 60 days")
