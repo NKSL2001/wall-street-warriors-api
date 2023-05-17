@@ -106,5 +106,5 @@ def verify(key):
 def preGetStockList():
     response_dict = requests.get("https://api.twelvedata.com/stocks?country=MY").json()['data']
     for stock in response_dict:
-        stock['symbol'] = stock['symbol']+".MY"
+        stock['symbol'] = stock['symbol']+".KL"
     cache.add("my_stock_list", response_dict)
