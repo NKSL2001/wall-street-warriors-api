@@ -23,7 +23,9 @@ Allow checking of price for any particular stock symbol(s) in the last few days.
 
 API call: `/price?apikey=APIKEY&symbol=XXXX`, multiple symbols can be requested by using comma to join them, e.g.: `symbol=AAPL,MSFT`.
 
-Return format: JSON containing the symbol as the key, and a dictionary containing prices for multiple stages, mapping the timestamp in epoch (milliseconds) to price (in RM).
+Return format: JSON containing the symbol as the key, and a dictionary containing prices for multiple stages, mapping the epoch timestamp (in milliseconds) to price (in RM).
+
+If the stock symbol is not found, the value of the symbol will be null, e.g. query for symbol "ZZZZ" will returns `{"ZZZZ": null}`.
 
 <details>
     <summary>A sample of response JSON (truncated)</summary>
