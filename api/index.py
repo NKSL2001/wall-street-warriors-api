@@ -70,7 +70,10 @@ def getPrice():
     final_dict = dict()
     for sym in symbols:
         price = yf.Ticker(sym).history(period=days, interval=interval)
-        final_dict[sym] = getPriceDict(price)
+        if price.empty:
+            final_dict[sym] = None
+        else:
+            final_dict[sym] = getPriceDict(price)
 
     return Response(status=200, mimetype="application/json", response=json.dumps(final_dict))
 
