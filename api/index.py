@@ -41,6 +41,8 @@ def getPrice():
     # verify api key
     if not verify(request.args.get('apikey', type=str)):
         abort(401)
+    # log access key
+    print(request.args.get('apikey', type=str))
 
     symbol = request.args.get('symbol', type=str)
     days = request.args.get('days', default=5, type=int)
@@ -81,6 +83,8 @@ def getMYStockList():
     # verify api key
     if not verify(request.args.get('apikey', type=str)):
         abort(401)
+    # log access key
+    print(request.args.get('apikey', type=str))
     
     if cache.get("my_stock_list") is None:
         preGetStockList()
