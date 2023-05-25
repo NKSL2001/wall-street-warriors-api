@@ -12,7 +12,7 @@ This repository hosts the files required to run the REST API for the final assig
 
 You may access this API on the endpoint [`https://wall-street-warriors-api-um.vercel.app/`](https://wall-street-warriors-api-um.vercel.app/). API key is required for access for the API address below by appending the GET variable `apikey`. Follow the instructions provided in the project requirement PDF to get an API key for your final project.
 
-Currently, two modules are provided:
+Currently, two module functionalities are provided:
 
 ### `price`
 > **Warning**
@@ -23,7 +23,7 @@ Allow checking of price for any particular stock symbol(s) in the last few days.
 
 API call: `/price?apikey=APIKEY&symbol=XXXX`, multiple symbols can be requested by using comma to join them, e.g.: `symbol=AAPL,MSFT`.
 
-Return format: JSON containing the symbol as the key, and a dictionary containing prices for multiple stages, mapping the epoch timestamp (in milliseconds) to price (in RM).
+Return format: JSON containing the symbol as the key, and a dictionary containing prices for multiple stages, mapping the epoch timestamp (in milliseconds) to price (specified in symbol, if Malaysian stock then RM).
 
 If the stock symbol is not found, the value of the symbol will be null, e.g. query for symbol "ZZZZ" will returns `{"ZZZZ": null}`.
 
