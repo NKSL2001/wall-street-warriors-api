@@ -17,6 +17,8 @@ cache = Cache(app)
 # handle all other exception
 def all_exception_handler(error):
     res = {"error": str(error)}
+    # log 500 error
+    print(error)
     return Response(status=500, mimetype="application/json", response=json.dumps(res))
 
 # handle 401 exception
