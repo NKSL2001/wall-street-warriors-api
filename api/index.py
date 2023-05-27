@@ -19,18 +19,10 @@ def all_exception_handler(error):
     res = {"error": str(error)}
     # log 500 error
     print(error)
-    return Response(status=500, mimetype="application/json", response=json.dumps(res))
-
-# handle 401 exception
-def error_401_handler(error):
-    res = {"error": "Unauthorized"}
-    return Response(status=401, mimetype="application/json", response=json.dumps(res))
-
-# handle 413 exception
-def error_413_handler(error):
-    res = {"error": error.description}
-    return Response(status=413, mimetype="application/json", response=json.dumps(res))
-
+    if hasattr(error, "code"):
+        return Response(status=error.code, mimetype="application/json", response=json.dumps(res))
+    else:
+        return Response(status=500, mimetype="application/json", response=json.dumps(res))
 
 # API section
 
@@ -50,7 +42,7 @@ def getPrice():
     days = request.args.get('days', default=5, type=int)
         
     if not symbol:
-        abort(413, "No symbol provided")
+        abort(403, "No symbol provided")
         
     if days > 60:
         abort(413, "Days too large, max 60 days")
